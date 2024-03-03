@@ -1,17 +1,14 @@
 # IP2Vec
 implementing the concept of Word2Vec to represent relations between Ip addresses in a network traffic dataset
 
-
-Explanation: 
-We implemented the concept of Word2Vec to represent relations between Ip Adresses.
-We used the Destination Address, Source Adress and destination port. 
-The target and context words were as follow :
+In this project, we applied the concept of Word2Vec to capture relationships between IP addresses within a network traffic dataset, a method we refer to as IP2Vec. By leveraging the Destination Address, Source Address, and Destination Port fields, we constructed pairs of target and context words as follows:
 
 Target             Context 
 Source Ip          Destination Ip, Destination port 
 Destination port   Destination Ip
 
-we used destination port as target too to have it's representation too. 
+Furthermore, we also used the destination port as a target to ensure its representation within the embedding space.
 
-we then used a skipagram model to train and then take the weights to be the representation vector. 
-This mini-project was done to assist another Intrusion detection model, after this IP2Vec step we are able to use the information in the Ip address to help train the other intrusion detection model. 
+We utilized a Skip-gram model to train on these pairs, extracting the learned weights to obtain representation vectors. This step allowed us to capture meaningful semantic relationships between IP addresses within the network traffic.
+
+The primary objective of this mini-project was to augment another intrusion detection model. By integrating IP2Vec representations, we enhance the capability of the intrusion detection system to utilize the contextual information embedded within IP addresses, thus improving its overall effectiveness in detecting potential threats and anomalies within the network.
